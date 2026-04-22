@@ -1,10 +1,13 @@
 module github.com/rancher/machine
 
-go 1.25.0
+go 1.26
 
-toolchain go1.25.7
+toolchain go1.26.0
 
-replace github.com/urfave/cli => github.com/urfave/cli v1.11.1-0.20151120215642-0302d3914d2a // newer versions of this will break the rpc binding code
+replace(
+	github.com/rancher/wrangler/v3 => github.com/rancher/wrangler/v3 v3.6.0-rc.1.0.20260422041726-1ad245aff676
+ 	github.com/urfave/cli => github.com/urfave/cli v1.11.1-0.20151120215642-0302d3914d2a // newer versions of this will break the rpc binding code
+)
 
 require (
 	github.com/Azure/azure-sdk-for-go v55.8.0+incompatible
@@ -34,9 +37,9 @@ require (
 	golang.org/x/sys v0.38.0
 	google.golang.org/api v0.228.0
 	gopkg.in/yaml.v2 v2.4.0
-	k8s.io/api v0.35.1
-	k8s.io/apimachinery v0.35.1
-	k8s.io/client-go v0.35.1
+	k8s.io/api v0.36.0
+	k8s.io/apimachinery v0.36.0
+	k8s.io/client-go v0.36.0
 )
 
 require (
