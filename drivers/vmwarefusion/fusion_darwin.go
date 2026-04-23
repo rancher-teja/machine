@@ -794,13 +794,13 @@ func executeSSHCommand(command string, d *Driver) error {
 
 	client, err := cryptossh.Dial("tcp", fmt.Sprintf("%s:%d", d.IPAddress, d.SSHPort), config)
 	if err != nil {
-		log.Debugf("Failed to dial:", err)
+		log.Debugf("Failed to dial: %v", err)
 		return err
 	}
 
 	session, err := client.NewSession()
 	if err != nil {
-		log.Debugf("Failed to create session: " + err.Error())
+		log.Debugf("%s", "Failed to create session: " + err.Error())
 		return err
 	}
 	defer session.Close()
@@ -809,7 +809,7 @@ func executeSSHCommand(command string, d *Driver) error {
 	session.Stdout = &b
 
 	if err := session.Run(command); err != nil {
-		log.Debugf("Failed to run: " + err.Error())
+		log.Debugf("%s", "Failed to run: " + err.Error())
 		return err
 	}
 	log.Debugf("Stdout from executeSSHCommand: %s", b.String())
