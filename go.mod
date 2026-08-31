@@ -2,7 +2,7 @@ module github.com/rancher/machine
 
 go 1.27.0
 
-toolchain go1.27.6
+toolchain go1.27.0
 
 replace github.com/urfave/cli => github.com/urfave/cli v1.11.1-0.20151120215642-0302d3914d2a // newer versions of this will break the rpc binding code
 
@@ -145,6 +145,7 @@ require (
 	sigs.k8s.io/structured-merge-diff/v6 v6.3.2 // indirect
 	sigs.k8s.io/yaml v1.6.0 // indirect
 )
+
 
 
 replace github.com/rancher/lasso => github.com/rancher-teja/lasso v0.0.0-00010101000000-000000000000
